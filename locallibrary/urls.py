@@ -18,15 +18,17 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+
 
 # Use include() to add paths from the catalog application
 
-urlpatterns += [
-    path('catalog/', include('catalog.urls')),
+urlpatterns = [
+    path('admin/', admin.site.urls),
+path('catalog/', include('catalog.urls')),
 ]
+
+
+
 
 #Add URL maps to redirect the base URL to our application
 from django.views.generic import RedirectView
